@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+<head>
+  <title>API test in Javascript</title>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+
+  // use the jquery library.  It makes the query very easy to work with
+
+  // Get the json, and when it arrives, call the parseTime function 
+  function getTime(){
+    $.getJSON('http://time.jsontest.com', parseTime);
+  } // end function
+
+  // parse the time object
+  function parseTime(data){
+
+    console.log(data);
+
+    // copy components to page
+    $("#spnDate").html(data.date);
+    $("#spnTime").html(data.time);
+
+  } // end parseTime
+
+
+  </script>
+
+</head>
+
+<body>
+
+  <p>
+    Date: <span id = "spnDate"></span>
+  </p>
+
+  <p>
+    Time: <span id = "spnTime"></span>
+  </p>
+
+
+  <button type = "button" 
+          onclick = "getTime()">
+    get the current date and time
+  </button>
+</body>
+
+</html>

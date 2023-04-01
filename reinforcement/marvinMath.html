@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Marvin the Math Pirate</title>
+    <link rel="stylesheet"
+          type = "text/css"
+          href="problem.css" />
+</head>
+<body>
+    <h1>Marvin the Math Pirate</h1>
+    <div id = "all">
+    
+    <h2>Background</h2>
+    <p>
+        You've discovered a treasure map.  About time, right?  The map is clearly marked,
+        and on the back is a series of numbers.  You think these are probably coordinate
+        pairs which mark exactly the sequence you should travel on the map.  Just as
+        you're ready to start following the map, it is stolen by your evil nemesis.
+        Because that's what evil nemesises do.  He starts following the
+        coordinates on the back of the map, and is immediately caught in a large trap.
+    </p>
+    
+    <p>
+        You get the map back and look at the numbers again. You notice some patterns:
+    </p>
+    
+    <ul>
+        <li>The first number in each pair is larger than the second</li>
+        <li>All the numbers are positive integers</li>
+        <li>The list is signed "Marvin the Math Pirate"</li>
+        </li>You know Marvin. He loves to add and subtract
+            (which is something Math Pirates love to do.)</li>
+    </ul>
+    
+    <p>
+        You've spotted the pattern: The values on the map aren't the coordinates.
+        The first value of each pair is the SUM of the actual coordinates, and
+        the second value is the DIFFERENCE.
+    </p>
+    
+    <p>
+        Your nemisis is breaking free. You need to quickly write a program that
+        will translate each sum and difference pair into the coordinate pair
+        you'll need to find the treasure.
+    </p>
+    
+    <h2>Input Expectations</h2>
+    <p>
+        Each line of input consists of a pair of integers separated by
+        a space. There might be any number of lines of input.
+    </p>
+    
+    <h2>Sample Input</h2>
+    <pre>
+45 5 
+8 3 
+12 0 
+11 11 
+44 5
+    </pre>
+    
+    <h2>Output Expectations</h2>
+    <p>
+        There will be one line of output for each line of input.  The output
+        line will be the coordinate pair or the phrase "no solution"
+    </p>
+
+    <h2>Sample Output</h2>
+    <pre>
+25 20
+no solution
+6 6
+11 0
+no solution
+    </pre>
+    </div>
+</body>
+</html>

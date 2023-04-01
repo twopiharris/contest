@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Programming with STDIO</title>
+</head>
+<body>
+	<h1>Input and Output for Programming Contests</h1>
+  <div>
+    <h2>Overview</h2>
+    <p>
+      Contest programming is slightly different than the kind
+      of programming you likely did in class. The biggest issue
+      is the way grading software works.  Rather than working
+      interactively with the user, your programs will need to
+      read in from standard input. This is actually pretty easy
+      to do, but it will take some practice.
+    </p>
+    
+    <p>
+      The best way to practice is with an online tool like
+      <a href = "http://ideone.com">ideone.</a> or  
+      <a href = "http://hackerrank.com">hackerRank.com</a> These tools use
+      remote compilation just like the contest system, and also
+      uses stdin and stdout just like the contest.  It's also
+      available any time you're online, so learn how to use it
+      rather than being dependant on an IDE.
+    </p>
+			
+		<p>
+			We present here several starter scripts for the languages
+			supported by the contest.  Note that each code snippet
+			reads stdin until it is finished, and then calls a
+			process function passing that line as single string. You can
+			put all your code in the process function. There is no need to 
+                        modify anything but the process function / method. Feel free to 
+                        copy and paste these code snippets so you can get started more 
+                        quickly.  You do not need to use this code, but you cannot use
+                        ordinary interactive input like you might have done in class. 
+		</p>
+  </div>
+  
+  <div>
+    <h2>C++</h2>
+    <p>
+      C++ uses cin. Note that cin is Null (false) if
+      there is no input.  Also, if the getline is
+      inside the loop, the last input will be empty.
+      This is why you typically only process cin when
+      you get a line.
+    </p>
+    <pre>
+#include &lt;iostream>
+using namespace std;
+
+//prototype process function
+void process(string);
+
+int main() {
+	string line;
+	//keep reading as long as there's more input
+	while(cin){
+		getline(cin, line);
+		//ignore last input, it will be null
+		if(cin){
+			//do whatever with the data
+			process(line);
+		} // end if
+	} // end while
+	return 0;
+} // end main
+
+void process(string line){
+	//your code here
+  cout &lt;&lt; line &lt;&lt; ", dude" &lt;&lt; endl;
+}
+    </pre>
+  </div>
+	
+	<div>
+		<h2>C</h2>
+		<p>
+			C string manipulation requires some care.  The getline
+			function returns a line from the input, but it does a
+			quiet memory allocation, requires a length, and returns
+			the number of characters read.  
+		</p>
+		
+		<p>
+			The getline() function returns a -1 when it cannot find
+			any input. Be sure to return 0 or your program will
+			incorrectly report an error.  
+		</p>
+		
+		<p>
+			Since the line variable is dynamically allocated,
+			you must free it to prevent a memory leak.
+		</p>
+		
+		<pre>
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+
+void process(char* line){
+	printf("%s, dude \n", line);
+} // end process
+
+int main(void) {
+  char * line = NULL;
+  size_t len = 0;
+  size_t read;
+  
+  while ((read = getline(&line, &len, stdin)) != -1){
+    //strip the trailing newline
+  	line = strtok(line, "\n");
+  	process(line);
+  } // end while
+	
+  //line was quietly malloc-ed - it must be freed
+  free(line);
+  
+  return(0);
+} // end main
+
+		</pre>
+	</div>
+	
+	<div>
+		<h2>Java</h2>
+		<p>
+			Java is very similar to how you've probably used it.
+			The biggest issue with Java is the strict naming
+			conventions. Please do NOT use a package (because
+			that requires a special directory structure.)  Also,
+                        You may call your class whatever you like, but do NOT use
+                        the public modifier.
+		</p>
+		
+		<p>
+			It's better not to put too much code in main() in Java,
+			because main is a static method and has some limitiations.
+			In the sample code, the constructor reads each line of
+			stdin and calls process() with that line as a parameter.
+		</p>
+		
+		<pre>
+/* package whatever; // don't place package name! */
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* 
+  DO NOT use the public modifier, but you may call the class whatever you wish.
+*/
+class Solution
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		//Don't write too much in main. Static methods are a pain
+		//Just instantiate your class
+		new Solution();
+	}
+ 
+	public Solution(){
+		Scanner input = new Scanner(System.in);
+		while(input.hasNext()){
+			String line = input.nextLine();
+			process(line);
+		} // end while
+	} // end constructor
+ 
+	public void process(String line){
+		System.out.println(line + ", dude!");
+	} // end process
+} // end class def
+		</pre>
+	</div>
+	
+	<div>
+		<h2>Python</h2>
+		<p>
+			Python is (not surprisingly) very easy to work with when
+			it comes to standard input.  sys.stdin is an iterator
+			just like a file or list, so you can work with each line
+			one at a time.
+		</p>
+		
+		<p>
+			Note my process function is using python 3 syntax, but this
+			code should work fine in any reasonably modern Python.
+			You can use <code>print "%s, dude!", line</code> in
+			Python 2.* if you prefer.
+		</p>
+		
+		<pre>
+import sys
+
+def main():
+	for line in sys.stdin:
+		process(line.strip())
+	
+def process(line):
+	print("{}, dude!".format(line))
+	
+if __name__ == "__main__":
+	main()
+		</pre>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Big Fib</title>
+    <link rel="stylesheet"
+          type = "text/css"
+          href="problem.css" />
+</head>
+<body>
+    <h1>Problem 2: Big Fib</h1>
+    <div id = "all">
+    
+    <h2>Background</h2>
+    <p>
+        The Fibbonacci sequence is a famous pattern in mathematics.  Each value
+        in the sequence is the sum of the previous two values.  It begins like
+        this:
+    </p>
+    
+    <pre>
+        0, 1, 1, 2, 3, 5, 8
+    </pre>
+    
+    <p>
+        0 + 1 = 1, 1 + 1 is 2, 1 + 2 is 3, 2 + 3 is 5, and 3 + 5 is 8.
+    </p>
+    
+    <p>
+        All this is dandy, but what if you want an arbitrary Fibonacci
+        number?  Let's say you want to find element 14 of the series, or
+        element 24?  Your job is to write a program that does exactly that.
+    </p>
+    
+    <p>
+        Note that Fibonacci numbers get big very quickly, so input will be
+        designed so that no result will be longer than 10 digits of output.
+        (This should fit comfortably within the unsigned long type of most
+        languages.) If you are running into strange negative results, be
+        sure you're using a large enough data type.
+    </p>
+    
+    <h2>Input Expectations</h2>
+    <p>
+        Each line will consist of a single integer. That integer is the index
+        of the Fibonacci number you want to return. Remember, computers begin
+        counting at zero, so item 4 of the Fibonacci sequence is 3.
+        The input file should be named "2in.txt"
+    </p>
+    
+    <h2>Sample Input</h2>
+    <pre>
+4
+10
+14
+18
+    </pre>
+    
+    <h2>Output Expectations</h2>
+    <p>
+        There will be one line of output for each line of input. The output line
+        will be the nth element of the Fibonacci sequence. All outputs will be
+        expressable as 64-bit long ints.
+    </p>
+
+    <h2>Sample Output</h2>
+    <pre>
+3
+55
+377
+2584    </pre>
+    
+    </div>
+</body>
+</html>

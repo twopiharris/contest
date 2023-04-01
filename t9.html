@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Radio Range</title>
+    <link rel="stylesheet"
+          type = "text/css"
+          href="problem.css" />
+    
+    <style type = "text/css">
+    table, th, tr, td {
+        border: 1px solid rgb(100, 0, 0);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+</head>
+<body>
+ 
+    <h1>Problem 10: T9 Predictive text</h1>
+    <div id = "all">
+    
+    <h2>Background</h2>
+    
+    <p>
+        It is possible (if tedious) to type on a standard telephone keypad. The
+        t9 predictive text algorithm works by analysing the words that could
+        be spelled using a particular sequence of numeric keys.  
+    </p>
+    
+    <p>
+        The first step is to determine all of the possible letter combinations
+        that could be spelled with a particular numeric sequence.  Then this
+        list is checked against a dictionary.  For this exercise, you only
+        need to do the first part.
+    </p>
+    
+    <p>
+        Given a string of numbers, you will determine ALL the possible letter
+        combinations of those numbers. (Not simply the ones which spell words
+        in English.)
+    <p>
+        
+    <p>
+        For reference, here are the numbers on a telephone keypad and the
+        corresponding letters:
+    </p>
+    
+    <table>
+        <tr>
+            <th>0</th>
+            <td colspan = "4">no letters</td>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td colspan = "4">no letters</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <td>G</td>
+            <td>H</td>
+            <td>I</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>5</th>
+            <td>J</td>
+            <td>K</td>
+            <td>L</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>6</th>
+            <td>M</td>
+            <td>N</td>
+            <td>O</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>7</th>
+            <td>P</td>
+            <td>Q</td>
+            <td>R</td>
+            <td>S</td>
+        </tr>
+        <tr>
+            <th>8</th>
+            <td>T</td>
+            <td>U</td>
+            <td>V</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>9</th>
+            <td>W</td>
+            <td>X</td>
+            <td>Y</td>
+            <td>Z</td>
+        </tr>
+    </table>
+  
+    <h2>Input Expectations</h2>
+
+    <p>
+        Each line of input will be a string of numbers. There may be any number
+        of values in that string, and there may be any number of lines. You
+        may assume that the input contains only the values 2-9, as there are
+        no letters on the zero or one key.
+    </p>
+    
+    <p>
+        Please use "10in.txt" as the input file name.
+    </p>
+    
+    <h2>Sample Input</h2>
+    <pre>
+523
+74
+    </pre>
+    
+    <h2>Output Expectations</h2>
+    <p>
+        Output will consist of multiple lines per input. For each line of input,
+        print ALL the possible character combinations (not just the ones that
+        work as words.) Output should be one term per line, organized in
+        alphabetical order.
+    </p>
+    
+    <p>
+        Place a blank line between each group of outputs, to clarify a new set
+        of responses has begun.
+    </p>
+    
+    <h2>Sample Output</h2>
+    <pre>
+JAD
+JAE
+JAF
+JBD
+JBE
+JBF
+JCD
+JCE
+JCF
+KAD
+KAE
+KAF
+KBD
+KBE
+KBF
+KCD
+KCE
+KCF
+LAD
+LAE
+LAF
+LBD
+LBE
+LBF
+LCD
+LCE
+LCF
+
+PG
+PH
+PI
+QG
+QH
+QI
+RG
+RH
+RI
+SG
+SH
+SI
+    </pre>
+    
+    </div>
+</body>
+</html>

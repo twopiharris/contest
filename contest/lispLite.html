@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Radio Range</title>
+    <link rel="stylesheet"
+          type = "text/css"
+          href="problem.css" />
+</head>
+<body>
+ 
+    <h1>Problem 7: Lisp Lite</h1>
+    <div id = "all">
+    
+    <h2>Background</h2>
+    <p>
+        For this contest, you are most likely programming in an imperative langauge.
+        However, there are several other completely different styles of languages.
+        One of the oldest and most important is called 'functional languages.'
+        Of these, a very old language called 'LISP' is probably the most important.
+        LISP is a list-processing language.  In LISP, everything is a list.
+        What would be considered a command in another language is simply a list in LISP.
+        Often the first element in a list is some sort of instruction.  For example, to
+        add two elements in LISP, you might say something like this:
+        (+ 1 2)
+    </p>
+    
+    <p>
+        This will add one and two, resulting in 3.  You can nest instructions inside
+        each other, so you can have more complex instructions like this:
+    </p>
+    
+    <pre>
+(+ (* 2 5) (- 15 10))
+    </pre>
+    
+    <p>
+        Inner lists evaluate first, so this expression would evaluate as (+ 10 5), and
+        then 15.
+    </p>        
+        Your job is to build a simple lisp-style interpreter with the following
+        limitations:
+    </p>
+    
+    <ul>
+        <li>You will have only four arithmetic operations: "+", "-", "*", "/".</li>
+        <li>Each instruction list will contain three elements.</li>
+        <li>The first will be an operation stored as a single character string.</li>
+        <li>The second and third element will be an operand.</li>
+        <li>Operands will either be integers or a list containing a new instruction.</li>
+        <li>You will not know how deeply the instructions are nested.</li>
+        <li>You can assume none of the input will lead to division by zero.</li>
+        <li>You can also assume there are no syntax errors in the input lines.</li>
+    </ul>
+    
+    <h2>Input Expectations</h2>
+
+    <p>
+        Each line of input will be one expression in pseudo-lisp.
+        Note that every token (including parentheses) will be followed by a space for
+        easier parsing.  There may be any number of input lines.
+    </p>
+    
+    <p>
+        Please use "7in.txt" as the input file name.
+    </p>
+    
+    <h2>Sample Input</h2>
+    <pre>
+( + 8 ( * ( - 5 3 ) ( / 10 2 ) ) )
+( + 5 ( * 3 5 ) )
+    </pre>
+    
+    <h2>Output Expectations</h2>
+    <p>
+        Each line of input will generate a corresponding line of output. The
+        output for each expression will be a single number. (Don't worry about
+        whether the output is an integer or a float, as long as it is accurate.)
+    </p>
+    
+    <h2>Sample Output</h2>
+    <pre>
+18
+20
+    </pre>
+    
+    </div>
+</body>
+</html>

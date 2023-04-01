@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Amicable Numbers</title>
+    <link rel="stylesheet"
+          type = "text/css"
+          href="problem.css" />
+</head>
+<body>
+    <h1>Problem 1: Amicable Numbers</h1>
+    <div id = "all">
+    
+    <h2>Background</h2>
+    <p>
+        The proper divisors of a number all of the the divisors
+        of that number except the number itself.  For example, the proper
+        divisors of 6 are (1, 2, 3) and the proper divisors of 12 are (1, 2, 3,
+        4, 6). 
+    </p>
+    
+    <p>
+        Two numbers are said to be <em>amicable</em> if the sum of each number's
+        proper divisors is the other number. For example, (220, 284) are amicable
+        numbers:
+    </p>
+    
+    <pre>
+        220: (1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110): sum = 284
+        284: (1, 2, 4, 71, 142): sum = 220
+    </pre>
+    
+    <h2>Input Expectations</h2>
+    <p>
+        Each line of text is a pair of integers. The number of inputs may vary.
+        The input file should be named "1in.txt"
+    </p>
+    
+    <h2>Sample Input</h2>
+    <pre>
+220 284
+1184 1210
+3234 3425
+    </pre>
+    
+    <h2>Output Expectations</h2>
+    <p>
+        There will be one line of output for each line of input. The output
+        for each line must be either "amicable pair" or "NOT amicable pair"
+    </p>
+
+    <h2>Sample Output</h2>
+    <pre>
+amicable pair
+amicable pair
+NOT amicable pair
+    </pre>
+    
+    </div>
+</body>
+</html>

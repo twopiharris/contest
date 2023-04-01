@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Column Cipher</title>
+    <link rel="stylesheet"
+          type = "text/css"
+          href="problem.css" />
+</head>
+<body>
+    <h1>Problem 4: Column Cipher</h1>
+    <div id = "all">
+    
+    <h2>Background</h2>
+    
+    <p style = "background-color: pink">
+        I'm not sure about the sample here. The encoded phrase is
+        31 characters long. We should probably rework it to fit in
+        exactly 5 columns...
+    </p>
+    
+    <p>
+        The Daleks are invading and sending encoded messages to each other over
+        the air! You have managed to intercept their communications, but you
+        can't read them! The Doctor has figured out how they're encoding their
+        messages and needs you to build a machine that will decode them
+        automatically! Your task will be to implement a program that can
+        encrypt and decrypt a given input and key with a columnar transposition
+        cipher.
+    </p>
+    
+    <p>
+        <em>adapted from <a href = "http://www.contestcen.com/columnar.htm">
+        http://www.contestcen.com/columnar.htm</a></em>
+    </p>
+    
+    <p>
+        A columnar transposition cipher is a relatively simple cipher which
+        retains all of the original letters of a message, but changes their
+        order. The cipher works by placing the message in a grid, and then
+        taking the letters out in a different order. 
+    </p>
+    
+    <p>
+        For example, consider the message THIS IS A SAMPLE MESSAGE. Below, it
+        is written across the columns of a 5-column grid:
+    </p>
+    
+    <pre>
+T H I S I
+S A S A M
+P L E M E
+S S A G E
+    </pre>
+    
+    <p>
+        The most basic version of this cipher would be to simply read the
+        message as columns (most crypto reworks all output into groups of
+        five characters) giving TSPSH ALSIS EASAM GIMEE.
+    </p>
+    
+    <p>
+        Of course, this would be relatively easy to solve by just guessing
+        at the number of columns until the answer emerges.  The solution is
+        to use a keyword.  The keyword has the following features:
+    </p>
+    
+    <ul>
+        <li>The length of the keyword indicates the number of columns</li>
+        <li>The order of the letters indicates the order of columns</li>
+    </ul>
+    
+    <p>
+        So, they keyword ZEBRA would imply 5 columns wide. Look at the
+        letters in the keyword and determine the order they appear in
+        the alphabet.  A appears first, followed by B, E, R, and Z. Use
+        this to determine a numeric key, so ZEBRA becomes 53241.
+    </p>
+    
+    <pre>
+Z E B R A
+5 3 2 4 1
+    </pre>
+    
+    <p>
+        Place the key number above each column to determine the order the
+        columns will be read, like this:
+    </p>
+    
+    <pre>
+Z E B R A
+5 3 2 4 1
+---------
+T H I S I
+S A S A M
+P L E M E
+S S A G E
+    </pre>
+    
+    <p>
+        Now you simply read off the columns in the indicated order: column 1,
+        then column 2 and so on. This would make the sample message encoded
+        like this:
+        IMEEI SEAHA LSSAM GTSPS
+    </p>
+    
+    <h2>Input Expectations</h2>
+    <p>
+        Input will consist of two lines.
+    </p>
+    
+    <p>
+        The first line will contain the
+        keyword in uppercase. The keyword will not have any repeating
+        characters in it.
+    </p>
+    
+    <p>
+        The second line will contain a plain-text message which must be coded
+        using the given key. It will be in upper case, and will have a length
+        that is a multiple of the length of the key (once you ignore spaces.)
+        The message will not have any punctuation or unusual characters in it.
+    </p>
+
+    <p>
+        Please name your input file "4in.txt"
+    </p>
+    
+    <h2>Sample Input</h2>
+    <pre>
+TARDIS
+OUR FEZZES AND BOWTIES ARE VERY COOL
+    </pre>
+    
+    <h2>Output Expectations</h2>
+    <p>
+        There will be two lines of output. 
+        The first line of output is the enciphered plain text. The second
+        line of output is the deciphered coded text. You may output the
+        lines as single strings without worrying about spaces.
+    </p>
+
+    <h2>Sample Output</h2>
+    <pre>
+UEOAYFATEOENIVORSWRCZDEELOZBSR
+    </pre>
+    
+    </div>
+</body>
+</html>

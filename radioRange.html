@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Radio Range</title>
+    <link rel="stylesheet"
+          type = "text/css"
+          href="problem.css" />
+</head>
+<body>
+ 
+    <h1>Problem 9: Radio Range</h1>
+    <div id = "all">
+    
+    <h2>Background</h2>
+    <p>
+        You are assigned to help test a new form of secure radio communication
+        devices.  Each device has a specified range (in KM.) Each radio
+        is given to a test subject who's position is recorded by a GPS.
+    </p>
+    
+    <h2>Input Expectations</h2>
+    <p>
+        Each line of the input file will contain this data:
+    </p>
+    
+    <ul>
+        <li>x1 y1 r1 x2 y2 r2</li>
+        <li>Where r1 and r2 are integer values determining the ranges of the
+            radios (in KM)</li>
+        <li>x1 y1 is an integer pair indicating the position of the first volunteer
+            (in KM based upon a predetermined origin)</li>
+        <li>and x2 y2 is the location of the second volunteer.</li>
+    </ul>
+
+    <p>
+        The input file will include an unknown number of lines. Please use
+        "9in.txt" as the input file name.
+    </p>
+    
+    <h2>Sample Input</h2>
+    <pre>
+0 0 5 9 0 5
+0 0 5 11 0 5
+0 0 5 10 0 5
+    </pre>
+    
+    <h2>Output Expectations</h2>
+    <p>
+        The output file will have one line for each input.  The output will contain
+        one of the following strings:
+    </p>
+    
+    <ul>
+        <li>IN RANGE</li>
+        <li>OUT OF RANGE</li>
+        <li>MAX RANGE</li>
+    </ul>
+        
+    <p>
+        with the following meanings:
+    </p>
+    
+    <ul>
+        <li><strong>IN RANGE</strong> - The radios are in range of each other</li>
+        <li><strong>OUT OF RANGE</strong> - The radios will not be able to communicate</li>
+        <li><strong>MAX RANGE</strong> - The radios are at the extreme limits of range</li>
+    </ul>
+
+    <h2>Sample Output</h2>
+    <pre>
+IN RANGE
+OUT OF RANGE
+MAX RANGE
+    </pre>
+    
+    </div>
+</body>
+</html>

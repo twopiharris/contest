@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>BizBaz</title>
+    <link rel="stylesheet"
+          type = "text/css"
+          href="problem.css" />
+</head>
+<body>
+    
+    <h1>Problem 3: BizBaz</h1>
+    <div id = "all">
+    
+    <h2>Background</h2>
+    <p>
+    You are protecting Earth (again) from angry aliens bent on destruction of our
+    planet.  The aliens have a special form of weapon that sends death beams in a
+    wide swath of frequencies.  Our scientists have built a number of energy shields.
+    Unfortunately, each shield only works on certain frequencies. For example,
+    the "Biz" shield protects any frequency that is a multiple of 2, so it protects
+    against death beams of frequency 2, 4, and 10, but not 3, 5, or 13.  Here are the
+    shields at your disposal with their frequencies:
+    </p>
+    
+    <ul>
+        <li>Biz: 2</li>
+        <li>Baz: 3</li>
+        <li>Buzz: 5</li>
+        <li>Boz: 7</li>
+        <li>Beez: 11</li>
+        <li>Bizzle: 13</li>
+    </ul>
+    
+    <p>
+    The aliens will send a number of attacks. Each attack is indicated by a frequency
+    value. Your job is to coordinate our defenses by describing which shield to activate.
+    Note that a certain frequency might require more than one defense. So, an attack
+    with a frequency of 2 will call for "Biz," but a frequency of 6 will need "Biz Baz,"
+    because 6 contains components of 2 and 3. 26 would be "Biz Bizzle."  Note you should
+    count a shield only once, so 4 would be "Biz," not "Biz Biz."
+    </p>
+    
+    <p>
+    It's possible that an attack might leak through our defences. In that case,
+    the output should be "Bummer"  This will only happen if NONE of the other shields
+    can be activated on a frequency, so 34 is "Biz," not "Bummer"  
+    </p>
+    
+    <h2>Input Expectations</h2>
+    <p>
+    The input file contains a single integer on each line.  The number of
+    lines is unknown.
+    Please name your input file "3in.txt"
+    </p>
+    
+    <h2>Sample Input</h2>
+    <pre>
+14
+33
+17
+    </pre>
+    
+    <h2>Output Expectations</h2>
+    <p>
+        Output will contain the same number of lines as input. Each
+        output line includes the original integer and a string determining which defence
+        or defenses need to be activated to protect against this attack.  There should be
+        a space between shield names, and the capitalization should be preserved.
+        A sheild name only needs to be listed once per line. If
+        an attack leaks through, only the input and the term "Bummer" should be output.        
+    </p>
+
+    <h2>Sample Output</h2>
+    <pre>
+14 Biz Boz
+33 Baz Beez
+17 Bummer
+    </pre>
+    </div>
+</body>
+</html>

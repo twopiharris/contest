@@ -1,0 +1,175 @@
+Contest problems
+
+--- Letter frequency cipher (medium)
+The team is given two 20-line (80 char per line) text fragments.
+The first is written in the clear. The second is encrypted with
+a simple substitution cypher.
+
+Analyze the frequency of letter distribution in both samples
+to build a key. For example, if in the clear sample you find that
+the letter 'e' occurs most frequently, assume that the character
+that occurs most frequently in the second sample is also an E.
+
+Output line is the decyphered message
+
+--- Radio Range (Easy - Medium)
+You are assigned to help test a new form of secure radio communication
+devices.  Each device has a specified range (in KM.) Each radio
+is given to a test subject who's position is recorded by a GPS.
+
+Each line of the input file will contain this data:
+r1 x1 y1 r2 x2 y2
+Where r1 and r2 are integer values determining the ranges of the radios (in KM)
+x1 y1 is an integer pair indicating the position of the first volunteer
+(in KM based upon a predetermined origin)
+and x2 y2 is the location of the second volunteer.
+
+The input file will include an unknown number of lines.  The last line
+will contain a single asterisk(*)
+
+The output file will have one line for each input.  The output will contain
+one of the following strings:
+IN RANGE
+OUT OF RANGE
+MAX RANGE
+
+with the following meanings:
+IN RANGE - The radios are in range of each other
+OUT OF RANGE - The radios will not be able to communicate
+MAX RANGE - The radios are at the extreme limits of range
+
+
+--- BizBuzz (Easy)
+(AKA Snoop Dog problem)
+
+You are protecting Earth (again) from angry aliens bent on destruction of our
+planet.  The aliens have a special form of weapon that sends death beams in a
+wide swath of frequencies.  Our scientists have built a number of energy shields.
+Unfortunately, each shield only works on certain frequencies. For example,
+the "Biz" shield protects any frequency that is a multiple of 2, so it protects
+against death beams of frequency 2, 4, and 10, but not 3, 5, or 13.  Here are the
+shields at your disposal with their frequencies:
+
+Biz: 2
+Baz: 3
+Buzz: 5
+Boz: 7
+Beez: 11
+Bizzle: 13
+
+The aliens will send a number of attacks. Each attack is indicated by a frequency
+value. Your job is to coordinate our defenses by describing which shield to activate.
+Note that a certain frequency might require more than one defense. So, an attack
+with a frequency of 2 will call for "Biz," but a frequency of 6 will need "Biz Baz,"
+because 6 contains components of 2 and 3. 26 would be "Biz Bizzle."  Note you should
+count a shield only once, so 4 would be "Biz," not "Biz Biz."
+
+It's possible that an attack might leak through our defences. In that case,
+the output should be "Bummer"  This will only happen if NONE of the other shields
+can be activated on a frequency, so 34 is "Biz," not "Bummer"  
+
+Input:  The input file contains a single integer on each line.  The number of
+lines is unknown.  Output will contain the same number of lines as input. Each
+output line includes the original integer and a string determining which defence
+or defenses need to be activated to protect against this attack.  There should be
+a space between shield names, and the capitalization should be preserved. If
+an attack leaks through, only the input and the term "Bummer" should be output.
+
+INPUT
+14
+33
+17
+
+OUTPUT
+14 Biz Boz
+33 Baz Beez
+17 Bummer
+
+--- Reverse Math (easy - medium)
+
+Leonardo Da Vinci was famous for many things, but one of his oddest quirks was
+writing backwards.  You have discovered some of Da Vinci's notebooks, but when
+you look at the mathematics, it seems all wrong.
+
+After some study, you realize that Da Vinci was encoding his arithmetic, perhaps
+to keep nosey rivals from replicating his experiments.
+
+For every calculation, Da Vinci actually reverses the numbers, so 23 becomes 32,
+and 100 becomes 1.  (For this exercise, don't worry about leading zeros) He would
+then do the calculation and reverse the answer.
+
+Your job is to write a program that can read Da Vinci arithmetic and decypher it.
+Each line of input will consist of two integers separated by a space.
+Reverse each integer and add the reversed numbers together.  Finally, reverse the
+sum and print it to the output file.
+
+NOTE: I'm making the Da Vinci story up. There is no evidence he actually did this,
+but it makes a good story.
+
+INPUT
+24 1
+4358 754
+305 794
+
+OUTPUT
+34
+1998
+1
+
+--- Marvin the Math Pirate
+
+You've discovered a treasure map.  About time, right?  The map is clearly marked,
+and on the back is a series of numbers.  You think these are probably coordinate
+pairs which mark exactly the sequence you should travel on the map.  Just as
+you're ready to start following the map, it is stolen by your evil nemesis.
+Because that's what evil nemesises do.  He starts following the
+coordinates on the back of the map, and is immediately caught in a large trap.
+
+You get the map back and look at the numbers again. You notice some patterns:
+The first number in each pair is larger than the second
+All the numbers are positive integers
+The list is signed "Marvin the Math Pirate"
+
+
+--- Lisp Lite
+
+For this contest, you are most likely programming in an imperative langauge.
+However, there are several other completely different styles of languages.
+One of the oldest and most important is called 'functional languages.'
+Of these, a very old language called 'LISP' is probably the most important.
+LISP is a list-processing language.  In LISP, everything is a list.
+What would be considered a command in another language is simply a list in LISP.
+Often the first element in a list is some sort of instruction.  For example, to
+add two elements in LISP, you might say something like this:
+(+ 1 2)
+
+This will add one and two, resulting in 3.  You can nest instructions inside
+each other, so you can have more complex instructions like this:
+(+ (* 2 5) (- 15 10))
+
+Inner lists evaluate first, so this expression would evaluate as (+ 10 5), and
+then 15.
+
+Your job is to build a simple lisp-style interpreter with the following
+limitations:
+
+You will have only four arithmetic operations: "+", "-", "*", "/".
+Each instruction list will contain three elements.
+The first will be an operation stored as a single character string.
+The second and third element will be an operand.
+Operands will either be integers or a list containing a new instruction.
+You will not know how deeply the instructions are nested.
+You can assume none of the input will lead to division by zero.
+You can also assume there are no syntax errors in the input lines.
+
+Each line of input will be one expression in pseudo-lisp.
+Note that every token (including parentheses) will be followed by a space for
+easier parsing.
+
+Sample input:
+( + 8 ( * ( - 5 3 ) ( / 10 2 ) ) )
+( + 5 ( * 3 5 ) )
+
+Sample Output
+18
+20
